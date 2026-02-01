@@ -167,3 +167,102 @@ main{max-width:var(--max); margin:0 auto; padding: 22px 18px 70px}
     radial-gradient(820px 520px at 75% 30%, color-mix(in srgb, var(--gold) 12%, transparent) 0%, transparent 62%);
   filter: blur(.2px);
 }
+
+.hero__bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(500px 280px at 20% 10%, color-mix(in srgb, var(--gold) 20%, transparent) 0%, transparent 70%),
+    radial-gradient(600px 320px at 70% 20%, color-mix(in srgb, var(--blue) 18%, transparent) 0%, transparent 72%);
+  mix-blend-mode: screen;
+  animation: sweep 8s linear infinite;
+  opacity:.85;
+}
+@keyframes sweep{
+  0%{transform: translateX(-8%) translateY(0) rotate(-2deg)}
+  50%{transform: translateX(8%) translateY(1%) rotate(2deg)}
+  100%{transform: translateX(-8%) translateY(0) rotate(-2deg)}
+}
+
+.kicker{
+  margin:0 0 10px;
+  color: color-mix(in srgb, var(--gold) 85%, var(--muted));
+  font-weight:900;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-size:.78rem;
+}
+
+.hero__title{
+  margin:0;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height:1.05;
+  letter-spacing:-.02em;
+}
+.hero__subtitle{
+  margin: 12px 0 0;
+  color:var(--muted);
+  font-size:1.05rem;
+  max-width: 58ch;
+}
+
+.glow{
+  color: color-mix(in srgb, var(--gold) 88%, var(--text));
+  text-shadow: 0 0 24px color-mix(in srgb, var(--gold) 20%, transparent);
+}
+
+.hero__actions{
+  display:flex; gap:12px; flex-wrap:wrap;
+  margin-top: 16px;
+}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.85rem 1.05rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  letter-spacing:.02em;
+  border:1px solid var(--line);
+  background: color-mix(in srgb, var(--panel) 40%, transparent);
+  color:var(--text);
+  box-shadow: var(--shadow);
+}
+.btn:hover{transform: translateY(-1px)}
+.btn:active{transform: translateY(0)}
+
+.btn--primary{
+  border-color: color-mix(in srgb, var(--gold) 55%, var(--line));
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--gold) 32%, var(--panel)),
+    color-mix(in srgb, var(--blue) 10%, var(--panel)));
+}
+.btn--ghost{
+  box-shadow:none;
+  background: transparent;
+}
+
+.hero__stats{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap:10px;
+  margin-top: 16px;
+}
+.stat{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 12px;
+  background: color-mix(in srgb, var(--panel) 35%, transparent);
+}
+.stat__num{
+  font-weight:900;
+  color: color-mix(in srgb, var(--gold) 70%, var(--text));
+  letter-spacing:.14em;
+  font-size:.9rem;
+}
+.stat__label{
+  margin-top:6px;
+  color:var(--muted);
+  font-weight:700;
+  font-size:.92rem;
+}
