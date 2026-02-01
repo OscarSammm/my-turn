@@ -99,3 +99,71 @@ body{
   font-size:.95rem;
   color: color-mix(in srgb, var(--gold) 85%, var(--text));
 }
+
+/* Nav */
+.nav{display:flex; gap:1rem; align-items:center}
+.nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  font-size:.95rem;
+  opacity:.9;
+  padding:.55rem .75rem;
+  border-radius:999px;
+}
+.nav a:hover{
+  background: color-mix(in srgb, var(--panel) 45%, transparent);
+  opacity:1;
+}
+.nav__cta{
+  border:1px solid color-mix(in srgb, var(--gold) 55%, var(--line));
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--gold) 10%, transparent);
+}
+
+/* Toggle */
+.toggle{
+  display:flex; align-items:center; gap:.5rem;
+  cursor:pointer;
+  padding:.55rem .75rem;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: color-mix(in srgb, var(--panel) 40%, transparent);
+}
+.toggle__icon{color:var(--gold)}
+.toggle__text{font-weight:700; font-size:.9rem}
+
+/* Layout */
+main{max-width:var(--max); margin:0 auto; padding: 22px 18px 70px}
+
+/* Hero */
+.hero{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+  padding: 22px 0 8px;
+  position:relative;
+}
+
+.hero__bg{
+  position:absolute;
+  inset:-80px -120px -90px -120px;
+  z-index:-1;
+  opacity:.9;
+  pointer-events:none;
+  /* “cityline + scanline + spotlight” (original CSS shapes) */
+  background:
+    /* scanlines */
+    repeating-linear-gradient(180deg,
+      color-mix(in srgb, var(--text) 6%, transparent) 0px,
+      transparent 2px,
+      transparent 6px),
+    /* skyline blocks */
+    linear-gradient(180deg, transparent 0%, transparent 62%, color-mix(in srgb, var(--line) 55%, transparent) 62%),
+    repeating-linear-gradient(90deg,
+      transparent 0px, transparent 18px,
+      color-mix(in srgb, var(--line) 35%, transparent) 18px,
+      color-mix(in srgb, var(--line) 35%, transparent) 20px),
+    radial-gradient(900px 480px at 30% 20%, color-mix(in srgb, var(--blue) 18%, transparent) 0%, transparent 60%),
+    radial-gradient(820px 520px at 75% 30%, color-mix(in srgb, var(--gold) 12%, transparent) 0%, transparent 62%);
+  filter: blur(.2px);
+}
