@@ -60,3 +60,42 @@ body{
   position:relative;
 }
 
+/* Top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:14px 18px;
+  border-bottom:1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 75%, transparent) 0%, transparent 100%);
+  backdrop-filter: blur(10px);
+}
+
+.brand{display:flex; align-items:center; gap:.8rem}
+.brand__name{font-weight:800; letter-spacing:.08em; text-transform:uppercase}
+.brand__tag{font-size:.86rem; color:var(--muted)}
+.brand__text{display:flex; flex-direction:column; line-height:1.1}
+
+/* Monogram mark */
+.mark{
+  width:42px; height:42px;
+  display:grid; place-items:center;
+  position:relative;
+}
+
+.mark__ring{
+  position:absolute; inset:0;
+  border-radius:999px;
+  border:1px solid color-mix(in srgb, var(--gold) 50%, var(--line));
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--gold) 8%, transparent);
+}
+.mark__letters{
+  font-weight:900;
+  letter-spacing:.06em;
+  font-size:.95rem;
+  color: color-mix(in srgb, var(--gold) 85%, var(--text));
+}
