@@ -87,6 +87,13 @@ body{
   position:relative;
 }
 
+.logo{
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 999px; /* optional */
+}
+
 .mark__ring{
   position:absolute; inset:0;
   border-radius:999px;
