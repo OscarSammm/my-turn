@@ -1,42 +1,60 @@
 /* styles.css*/
 :root{
-  --bg: #070a10;
-  --bg2:#0b0f18;
-  --panel:#0e1422cc;
-  --panel2:#0f1a2e99;
-  --text:#e9eef7;
-  --muted:#a9b4c8;
-  --gold:#d8b86a;
-  --blue:#7cb6ff;
-  --line:#22304a;
-  --shadow: 0 18px 55px rgba(0,0,0,.55);
+  /* Background */
+  --bg:  #ffffff;   /* white */
+  --bg2: #f5f0e6;   /* beige */
+
+  /* Panels / cards */
+  --panel:  #ffffff;   /* pure white panels */
+  --panel2: #fbf6ed;   /* soft beige panels */
+
+  /* Text */
+  --text:  #1f1f1f;
+  --muted: #6a6257;
+
+  /* Accents */
+  --gold: #b8924a;
+
+  /* Keep this variable but make it NOT blue */
+  --blue: #b8924a;
+
+  /* Lines / borders */
+  --line: #d8cbb3;
+
+  /* Shadows (lighter than before) */
+  --shadow: 0 10px 30px rgba(0,0,0,.10);
+
   --radius: 18px;
   --max: 1120px;
 }
 
+
 *{box-sizing: border-box;}
 html, body{height: 100%;}
 body{
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  background: radial-gradient(1200px 700px at 20% 10%, #0e1630 0%, transparent 60%),
-              radial-gradient(900px 600px at 80% 30%, #0a2a3a 0%, transparent 55%),
-              linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-  color:var(--text);
-  overflow-x:hidden;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+  color: var(--text);
+  overflow-x: hidden;
 }
+
 
 /* Light theme via checkbox */
 #themeToggle:checked ~ .app{
-  --bg:#f5f7fb;
-  --bg2:#e9eef7;
-  --panel:#ffffffcc;
-  --panel2:#ffffffaa;
-  --text:#0b1220;
-  --muted:#4e5a6f;
-  --line:#cfd7e6;
-  --shadow: 0 14px 40px rgba(0,0,0,.12);
+  --bg:  #ffffff;
+  --bg2: #f5f0e6;
+
+  --panel:  #ffffff;
+  --panel2: #fbf6ed;
+
+  --text:  #1f1f1f;
+  --muted: #6a6257;
+
+  --line: #d8cbb3;
+  --shadow: 0 10px 30px rgba(0,0,0,.10);
 }
+
 
 .sr-only{
   position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
@@ -157,34 +175,27 @@ main{max-width:var(--max); margin:0 auto; padding: 22px 18px 70px}
   z-index:-1;
   opacity:.9;
   pointer-events:none;
-  /* “cityline + scanline + spotlight” (original CSS shapes) */
+
+  /* CLEAN background (no grid/boxes) */
   background:
-    /* scanlines */
-    repeating-linear-gradient(180deg,
-      color-mix(in srgb, var(--text) 6%, transparent) 0px,
-      transparent 2px,
-      transparent 6px),
-    /* skyline blocks */
-    linear-gradient(180deg, transparent 0%, transparent 62%, color-mix(in srgb, var(--line) 55%, transparent) 62%),
-    repeating-linear-gradient(90deg,
-      transparent 0px, transparent 18px,
-      color-mix(in srgb, var(--line) 35%, transparent) 18px,
-      color-mix(in srgb, var(--line) 35%, transparent) 20px),
-    radial-gradient(900px 480px at 30% 20%, color-mix(in srgb, var(--blue) 18%, transparent) 0%, transparent 60%),
-    radial-gradient(820px 520px at 75% 30%, color-mix(in srgb, var(--gold) 12%, transparent) 0%, transparent 62%);
+    radial-gradient(900px 480px at 30% 20%, color-mix(in srgb, var(--gold) 10%, transparent) 0%, transparent 60%),
+    radial-gradient(820px 520px at 75% 30%, color-mix(in srgb, var(--gold) 8%, transparent) 0%, transparent 62%);
   filter: blur(.2px);
 }
 
+
 .hero__bg::after{
   content:"";
-  position:absolute; inset:0;
+  position:absolute;
+  inset:0;
   background:
-    radial-gradient(500px 280px at 20% 10%, color-mix(in srgb, var(--gold) 20%, transparent) 0%, transparent 70%),
-    radial-gradient(600px 320px at 70% 20%, color-mix(in srgb, var(--blue) 18%, transparent) 0%, transparent 72%);
+    radial-gradient(500px 280px at 20% 10%, color-mix(in srgb, var(--gold) 10%, transparent) 0%, transparent 70%),
+    radial-gradient(600px 320px at 70% 20%, color-mix(in srgb, var(--gold) 8%, transparent) 0%, transparent 72%);
   mix-blend-mode: screen;
   animation: sweep 8s linear infinite;
-  opacity:.85;
+  opacity:.65;
 }
+
 @keyframes sweep{
   0%{transform: translateX(-8%) translateY(0) rotate(-2deg)}
   50%{transform: translateX(8%) translateY(1%) rotate(2deg)}
