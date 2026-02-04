@@ -1,335 +1,422 @@
 <!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ToRo - personal brand site. Mission-driven. Built for impact." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ToRo - personal brand site. Mission-driven. Built for impact."
+    />
     <meta property="og:title" content="ToRo" />
-    <meta property="og:description" content="Mission brief • Work • Skills • Contact" />
+    <meta
+      property="og:description"
+      content="Mission brief • Work • Skills • Contact"
+    />
     <title>ToRo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Css-only them toggle (no jS)-->
-     <input class="sr-only" type="checkbox" id="themeToggle" aria-label="Toggle lighttheme" />
-     <div class="app">
-        <a class="skip" href="#main">Skip to content</a>
-        <header class="topbar">
-            <div class="brand">
-                <div class="mark">
-                    <img src="images/toro-logo.png" alt="ToRo logo" class="logo" />
-                </div>
-                <div class="brand__text">
-                    <div class="brand__name">ToRo</div>
-                    <div class="brand__tag">Noir discipline • built for impact</div>
-                </div>
-            </div>
-            <nav class="nav" aria-label="Primary">
-                <a href="#about">About</a>
-                <a href="#work">Work</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact" class="nav__cta">Contact</a>
-            </nav>
-            
-            <label class="toggle" for="themeToggle" title="Toggle theme">
-                <span class="toggle__icon" aria-hidden="true">◐</span>
-                <span class="toggle__text">Theme</span>
-            </label>
-        </header>
-        <main id="main">
-            <section class="hero">
-                <div class="hero__bg" aria-hidden="true"></div>
-                <div class="hero__content">
-                    <p class="kicker">Mission Brief</p>
-                    <h1 class="hero__title">
-                        Im <span class="glow">ToRo</span> - built for pressure, trained for results.</h1>
-                        <p class="hero__subtitle">I combine sharp execution with calm focus. Clean work, fast learning, zero excuses.
-            (Replace this with your real story.)</p>
-                <div class="hero__actions">
-                    <a class="btn btn--primary" href="#work">View my work</a>
-                    <a class="btn btn--ghost" href="#contact">Contact me</a>
-                </div>
-                <div class="hero__stats" role="list" aria-label="Quick Stats">
-                    <div class="stat" role="listitem">
-                        <div class="stat__num">01</div>
-                        <div class="stat__label">Focus Builder</div>
-                </div>
-                <div class="stat" role="listitem">
-                    <div class="stat__num">02</div>
-                    <div class="stat__label">Team First</div>
-                </div>
-                <div class="stat" role="listitem">
-                    <div class="stat__num">03</div>
-                    <div class="stat__label">Always Learning</div>
-                </div>
-              </div>
-             </div>
-             <div class="hero__card">
-                <div class="card card--glass">
-                    <div class="card__top">
-                        <span class="chip">CLEARANCE: VERIFIED</span>
-                        <span class="pulse" aria-hidden="true"></span>
-                    </div>
-                    <h2 class="card__title">Dossier</h2>
-                    <ul class="dossier">
-                        <li><span class="dossier__k">Codename:</span> <span class="dossier__v">ToRo</span></li>
-                        <li><span class="dossier__k">Specialty</span><span class="dossier__v">Tech + Performance</span></li>
-                        <li><span class="dossier__k">Base</span><span class="dossier__v">San Antonio, TX</span></li>
-                        <li><span class="dossier__k">Status</span><span class="dossier__v">Active</span></li>
-                    </ul>
-                    <p class="fineprint">
-                        *Everything here is editable. I can swap this for my real info anytime.
-                    </p>
-                </div>
-             </div>
-            </section>
+    <input
+      class="sr-only"
+      type="checkbox"
+      id="themeToggle"
+      aria-label="Toggle lighttheme"
+    />
+    <div class="app">
+      <a class="skip" href="#main">Skip to content</a>
+      <header class="topbar">
+        <div class="topbar__left">
+          <!-- hamburger (hidden on desktop, shown on mobile) -->
+          <button
+            class="iconbtn iconbtn--menu"
+            type="button"
+            aria-label="Open menu"
+          >
+            <span class="icon icon--menu" aria-hidden="true"></span>
+          </button>
 
-            <!--About-->
-            <section id="about" class="section">
-                <div class="section__head">
-                    <h2 class="section__title">About</h2>
-                    <p class="section__sub">
-                        Quiet confidence. Clear values. Measured moves.
-                    </p>
-                </div>
-                <div class="grid-2">
-                    <article class="panel">
-                        <h3 class="panel__title">My story</h3>
-                        <p>
-                            Im buildign my brand around consistency, discipline and hardwork.
-                            I like the clean desgin, strong fundamentals, and work that feels real. 
-                            A guy who shows up and wants to succeed.
-                        </p>
-                        <p>
-                            When things get chaotic, i lock in: plan, execute, review, and improve.
-                        </p>
-                    </article>
-                    <aside class="panel panel--accent">
-                        <h3 class="panel__title">Code of conduct</h3>
-                        <ul class="bullets">
-                            <li>Do the work the right way, espcially when nobody is watching</li>
-                            <li>Stay Sharp</li>
-                            <li>Be humble</li>
-                        </ul>
-                    </aside>
-                </div>
-                <div class="panel mt">
-                    <h3 class="panel__title">Gadget loadout</h3>
-                    <p class="muted">
-                        Tools I use to build.
-                    </p>
-                    <div class="tags" aria-label="Tools and stack">
-                        <span class="tag">VS Code</span>
-                        <span class="tag">GitHub</span>
-                        <span class="tag">HTML</span>
-                        <span class="tag">Javascript</span>
-                        <span class="tag">CSS</span>
-                    </div>
-                </div>
-            </section>
-
-                  <!-- WORK -->
-      <section id="work" class="section">
-        <div class="section__head">
-          <h2 class="section__title">Work</h2>
-          <p class="section__sub">Selected missions (portfolio). Replace titles + links.</p>
+          <!-- mini nav (shown on desktop, hidden on mobile) -->
+          <nav class="mininav" aria-label="Site">
+            <a href="#shop">Shop</a>
+            <a href="#science">Science</a>
+            <a href="#athletes">Athletes</a>
+            <a href="#stockist">Become a Stockist</a>
+            <a href="#locator">Store Locator</a>
+            <a href="#club">Fuel Club</a>
+          </nav>
         </div>
 
-        <div class="cards">
-          <article class="workcard">
-            <div class="workcard__top">
-              <span class="badge">WEB</span>
-              <span class="badge badge--ghost">FEATURED</span>
-            </div>
-            <h3 class="workcard__title">Night Ops Dashboard</h3>
-            <p class="workcard__desc">
-              A clean UI dashboard concept with a stealth aesthetic and strong readability.
-            </p>
-            <ul class="mini">
-              <li>Role: Designer/Developer</li>
-              <li>Tools: HTML/CSS</li>
-            </ul>
-            <div class="workcard__actions">
-              <a class="link" href="#" aria-label="Open project">View</a>
-              <a class="link" href="#" aria-label="Open code repository">Code</a>
-            </div>
-          </article>
-
-          <article class="workcard">
-            <div class="workcard__top">
-              <span class="badge">SCHOOL</span>
-            </div>
-            <h3 class="workcard__title">Gadget Inventory</h3>
-            <p class="workcard__desc">
-              A simple inventory layout that focuses on structure, clarity, and speed.
-            </p>
-            <ul class="mini">
-              <li>Role: Developer</li>
-              <li>Tools: Java / Data structures</li>
-            </ul>
-            <div class="workcard__actions">
-              <a class="link" href="#">View</a>
-              <a class="link" href="#">Code</a>
-            </div>
-          </article>
-
-          <article class="workcard">
-            <div class="workcard__top">
-              <span class="badge">BRAND</span>
-            </div>
-            <h3 class="workcard__title">Citylight Landing</h3>
-            <p class="workcard__desc">
-              A brand landing page with noir lighting, crisp typography, and strong CTA flow.
-            </p>
-            <ul class="mini">
-              <li>Role: Designer</li>
-              <li>Tools: HTML/CSS</li>
-            </ul>
-            <div class="workcard__actions">
-              <a class="link" href="#">View</a>
-              <a class="link" href="#">Case Study</a>
-            </div>
-          </article>
-
-          <article class="workcard">
-            <div class="workcard__top">
-              <span class="badge">EXPERIMENT</span>
-            </div>
-            <h3 class="workcard__title">Signal Intercept UI</h3>
-            <p class="workcard__desc">
-              A UI experiment: panels, chips, and “classified” components for fast scanning.
-            </p>
-            <ul class="mini">
-              <li>Role: Builder</li>
-              <li>Tools: CSS animations</li>
-            </ul>
-            <div class="workcard__actions">
-              <a class="link" href="#">View</a>
-              <a class="link" href="#">Code</a>
-            </div>
-          </article>
-        </div>
-      </section>
-      <!-- SKILLS -->
-      <section id="skills" class="section">
-        <div class="section__head">
-          <h2 class="section__title">Skills</h2>
-          <p class="section__sub">What I’m good at — and what I’m upgrading next.</p>
+        <div class="topbar__center">
+          <a class="wordmark" href="#">ToRo</a>
         </div>
 
-        <div class="grid-2">
-          <div class="panel">
-            <h3 class="panel__title">Core skills</h3>
+        <div class="topbar__right">
+          <button class="iconbtn" type="button" aria-label="Search">
+            <span class="icon icon--search" aria-hidden="true"></span>
+          </button>
 
-            <div class="skill">
-              <div class="skill__row">
-                <span>Front-end foundations</span><span class="muted">Strong</span>
-              </div>
-              <div class="bar"><span style="width: 82%"></span></div>
+          <button class="iconbtn" type="button" aria-label="Account">
+            <span class="icon icon--user" aria-hidden="true"></span>
+          </button>
+
+          <button
+            class="iconbtn iconbtn--badge"
+            type="button"
+            aria-label="Cart"
+          >
+            <span class="icon icon--bag" aria-hidden="true"></span>
+            <span class="badgeDot" aria-hidden="true">0</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="hero">
+          <div class="hero__bg" aria-hidden="true"></div>
+          <div class="hero__content">
+            <p class="kicker">Introduction</p>
+            <h1 class="hero__title">Im <span class="glow">ToRo</span></h1>
+            <p class="hero__subtitle">
+              Im a Student-athlete from San Pedro Sula, Honduras. Currently
+              majoring in Softawre Engineering at the University of Texas at San
+              Antonio.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#work">View my work</a>
+              <a class="btn btn--ghost" href="#contact">Contact me</a>
             </div>
-
-            <div class="skill">
-              <div class="skill__row">
-                <span>Java (practice)</span><span class="muted">Growing</span>
+            <div class="hero__stats" role="list" aria-label="Quick Stats">
+              <div class="stat" role="listitem">
+                <div class="stat__num">01</div>
+                <div class="stat__label">Focus Builder</div>
               </div>
-              <div class="bar"><span style="width: 62%"></span></div>
-            </div>
-
-            <div class="skill">
-              <div class="skill__row">
-                <span>Problem-solving</span><span class="muted">Strong</span>
+              <div class="stat" role="listitem">
+                <div class="stat__num">02</div>
+                <div class="stat__label">Team First</div>
               </div>
-              <div class="bar"><span style="width: 86%"></span></div>
-            </div>
-
-            <div class="skill">
-              <div class="skill__row">
-                <span>Communication</span><span class="muted">Strong</span>
+              <div class="stat" role="listitem">
+                <div class="stat__num">03</div>
+                <div class="stat__label">Always Learning</div>
               </div>
-              <div class="bar"><span style="width: 80%"></span></div>
             </div>
           </div>
-
-          <div class="panel panel--accent">
-            <h3 class="panel__title">Training regimen</h3>
-            <p class="muted">Next upgrades (edit these):</p>
-            <ul class="bullets">
-              <li>Ship 1 new project/month (small but clean).</li>
-              <li>Improve Java data structures + testing habits.</li>
-              <li>Build a stronger portfolio + personal brand.</li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <h3 class="panel__title">Achievements</h3>
-            <ul class="mini">
-              <li>Honor Roll (multiple times)</li>
-              <li>Player of the Game / Season</li>
-              <li>All-Region / All-Conference</li>
-            </ul>
+          <div class="hero__card">
+            <div class="card card--glass">
+              <div class="card__top">
+                <span class="chip">CLEARANCE: VERIFIED</span>
+                <span class="pulse" aria-hidden="true"></span>
+              </div>
+              <h2 class="card__title">Dossier</h2>
+              <ul class="dossier">
+                <li>
+                  <span class="dossier__k">Codename:</span>
+                  <span class="dossier__v">ToRo</span>
+                </li>
+                <li>
+                  <span class="dossier__k">Specialty</span
+                  ><span class="dossier__v">Tech + Performance</span>
+                </li>
+                <li>
+                  <span class="dossier__k">Base</span
+                  ><span class="dossier__v">San Antonio, TX</span>
+                </li>
+                <li>
+                  <span class="dossier__k">Status</span
+                  ><span class="dossier__v">Active</span>
+                </li>
+              </ul>
+              <p class="fineprint">
+                *Everything here is editable. I can swap this for my real info
+                anytime.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="section">
-        <div class="section__head">
-          <h2 class="section__title">Contact</h2>
-          <p class="section__sub">Send a message. Keep it simple. I’ll respond.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="panel">
-            <h3 class="panel__title">Message</h3>
-            <p class="muted">
-              This form is front-end only. For now, I can replace the button with a mail link or connect Formspree/Netlify later.
+        <!--About-->
+        <section id="about" class="section">
+          <div class="section__head">
+            <h2 class="section__title">About</h2>
+            <p class="section__sub">
+              Quiet confidence. Clear values. Measured moves.
             </p>
+          </div>
+          <div class="grid-2">
+            <article class="panel">
+              <h3 class="panel__title">My story</h3>
+              <p>
+                Im buildign my brand around consistency, discipline and
+                hardwork. I like the clean desgin, strong fundamentals, and work
+                that feels real. A guy who shows up and wants to succeed.
+              </p>
+              <p>
+                When things get chaotic, i lock in: plan, execute, review, and
+                improve.
+              </p>
+            </article>
+            <aside class="panel panel--accent">
+              <h3 class="panel__title">Code of conduct</h3>
+              <ul class="bullets">
+                <li>
+                  Do the work the right way, espcially when nobody is watching
+                </li>
+                <li>Stay Sharp</li>
+                <li>Be humble</li>
+              </ul>
+            </aside>
+          </div>
+          <div class="panel mt">
+            <h3 class="panel__title">Gadget loadout</h3>
+            <p class="muted">Tools I use to build.</p>
+            <div class="tags" aria-label="Tools and stack">
+              <span class="tag">VS Code</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">HTML</span>
+              <span class="tag">Javascript</span>
+              <span class="tag">CSS</span>
+            </div>
+          </div>
+        </section>
 
-            <form class="form" onsubmit="return false;">
-              <label>
-                <span>Name</span>
-                <input type="text" placeholder="Your name" autocomplete="name" />
-              </label>
-              <label>
-                <span>Email</span>
-                <input type="email" placeholder="you@email.com" autocomplete="email" />
-              </label>
-              <label>
-                <span>Message</span>
-                <textarea rows="5" placeholder="Write your message..."></textarea>
-              </label>
-              <button class="btn btn--primary" type="button">Send (connect later)</button>
-            </form>
+        <!-- WORK -->
+        <section id="work" class="section">
+          <div class="section__head">
+            <h2 class="section__title">Work</h2>
+            <p class="section__sub">
+              Selected missions (portfolio). Replace titles + links.
+            </p>
           </div>
 
-          <aside class="panel panel--accent">
-            <h3 class="panel__title">Direct</h3>
-            <p class="muted">Edit these links with your real info:</p>
+          <div class="cards">
+            <article class="workcard">
+              <div class="workcard__top">
+                <span class="badge">WEB</span>
+                <span class="badge badge--ghost">FEATURED</span>
+              </div>
+              <h3 class="workcard__title">Night Ops Dashboard</h3>
+              <p class="workcard__desc">
+                A clean UI dashboard concept with a stealth aesthetic and strong
+                readability.
+              </p>
+              <ul class="mini">
+                <li>Role: Designer/Developer</li>
+                <li>Tools: HTML/CSS</li>
+              </ul>
+              <div class="workcard__actions">
+                <a class="link" href="#" aria-label="Open project">View</a>
+                <a class="link" href="#" aria-label="Open code repository"
+                  >Code</a
+                >
+              </div>
+            </article>
 
-            <div class="contactlinks">
-              <a class="link" href="mailto:your@email.com">your@email.com</a>
-              <a class="link" href="#" target="_blank" rel="noreferrer">Instagram</a>
-              <a class="link" href="#" target="_blank" rel="noreferrer">Highlight Video</a>
-              <a class="link" href="#" target="_blank" rel="noreferrer">GitHub</a>
+            <article class="workcard">
+              <div class="workcard__top">
+                <span class="badge">SCHOOL</span>
+              </div>
+              <h3 class="workcard__title">Gadget Inventory</h3>
+              <p class="workcard__desc">
+                A simple inventory layout that focuses on structure, clarity,
+                and speed.
+              </p>
+              <ul class="mini">
+                <li>Role: Developer</li>
+                <li>Tools: Java / Data structures</li>
+              </ul>
+              <div class="workcard__actions">
+                <a class="link" href="#">View</a>
+                <a class="link" href="#">Code</a>
+              </div>
+            </article>
+
+            <article class="workcard">
+              <div class="workcard__top">
+                <span class="badge">BRAND</span>
+              </div>
+              <h3 class="workcard__title">Citylight Landing</h3>
+              <p class="workcard__desc">
+                A brand landing page with noir lighting, crisp typography, and
+                strong CTA flow.
+              </p>
+              <ul class="mini">
+                <li>Role: Designer</li>
+                <li>Tools: HTML/CSS</li>
+              </ul>
+              <div class="workcard__actions">
+                <a class="link" href="#">View</a>
+                <a class="link" href="#">Case Study</a>
+              </div>
+            </article>
+
+            <article class="workcard">
+              <div class="workcard__top">
+                <span class="badge">EXPERIMENT</span>
+              </div>
+              <h3 class="workcard__title">Signal Intercept UI</h3>
+              <p class="workcard__desc">
+                A UI experiment: panels, chips, and “classified” components for
+                fast scanning.
+              </p>
+              <ul class="mini">
+                <li>Role: Builder</li>
+                <li>Tools: CSS animations</li>
+              </ul>
+              <div class="workcard__actions">
+                <a class="link" href="#">View</a>
+                <a class="link" href="#">Code</a>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- SKILLS -->
+        <section id="skills" class="section">
+          <div class="section__head">
+            <h2 class="section__title">Skills</h2>
+            <p class="section__sub">
+              What I’m good at — and what I’m upgrading next.
+            </p>
+          </div>
+
+          <div class="grid-2">
+            <div class="panel">
+              <h3 class="panel__title">Core skills</h3>
+
+              <div class="skill">
+                <div class="skill__row">
+                  <span>Front-end foundations</span
+                  ><span class="muted">Strong</span>
+                </div>
+                <div class="bar"><span style="width: 82%"></span></div>
+              </div>
+
+              <div class="skill">
+                <div class="skill__row">
+                  <span>Java (practice)</span><span class="muted">Growing</span>
+                </div>
+                <div class="bar"><span style="width: 62%"></span></div>
+              </div>
+
+              <div class="skill">
+                <div class="skill__row">
+                  <span>Problem-solving</span><span class="muted">Strong</span>
+                </div>
+                <div class="bar"><span style="width: 86%"></span></div>
+              </div>
+
+              <div class="skill">
+                <div class="skill__row">
+                  <span>Communication</span><span class="muted">Strong</span>
+                </div>
+                <div class="bar"><span style="width: 80%"></span></div>
+              </div>
             </div>
 
-            <div class="divider"></div>
+            <div class="panel panel--accent">
+              <h3 class="panel__title">Training regimen</h3>
+              <p class="muted">Next upgrades (edit these):</p>
+              <ul class="bullets">
+                <li>Ship 1 new project/month (small but clean).</li>
+                <li>Improve Java data structures + testing habits.</li>
+                <li>Build a stronger portfolio + personal brand.</li>
+              </ul>
 
-            <p class="fineprint">
-              Tip: I can host this on GitHub Pages for free.
+              <div class="divider"></div>
+
+              <h3 class="panel__title">Achievements</h3>
+              <ul class="mini">
+                <li>Honor Roll (multiple times)</li>
+                <li>Player of the Game / Season</li>
+                <li>All-Region / All-Conference</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+          <div class="section__head">
+            <h2 class="section__title">Contact</h2>
+            <p class="section__sub">
+              Send a message. Keep it simple. I’ll respond.
             </p>
-          </aside>
-        </div>
-      </section>
-    </main>
+          </div>
 
-    <footer class="footer">
-      <p>© <span id="year">2026</span> ToRo • Built with discipline.</p>
-      <p class="muted">No copyrighted characters, logos, or quotes used — only original styling.</p>
-    </footer>
-     </div>
-     <script src="script.js"></script>
-</body>
+          <div class="grid-2">
+            <div class="panel">
+              <h3 class="panel__title">Message</h3>
+              <p class="muted">
+                This form is front-end only. For now, I can replace the button
+                with a mail link or connect Formspree/Netlify later.
+              </p>
+
+              <form class="form" onsubmit="return false;">
+                <label>
+                  <span>Name</span>
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    autocomplete="name"
+                  />
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input
+                    type="email"
+                    placeholder="you@email.com"
+                    autocomplete="email"
+                  />
+                </label>
+                <label>
+                  <span>Message</span>
+                  <textarea
+                    rows="5"
+                    placeholder="Write your message..."
+                  ></textarea>
+                </label>
+                <button class="btn btn--primary" type="button">
+                  Send (connect later)
+                </button>
+              </form>
+            </div>
+
+            <aside class="panel panel--accent">
+              <h3 class="panel__title">Direct</h3>
+              <p class="muted">Edit these links with your real info:</p>
+
+              <div class="contactlinks">
+                <a class="link" href="mailto:your@email.com">your@email.com</a>
+                <a class="link" href="#" target="_blank" rel="noreferrer"
+                  >Instagram</a
+                >
+                <a class="link" href="#" target="_blank" rel="noreferrer"
+                  >Highlight Video</a
+                >
+                <a class="link" href="#" target="_blank" rel="noreferrer"
+                  >GitHub</a
+                >
+              </div>
+
+              <div class="divider"></div>
+
+              <p class="fineprint">
+                Tip: I can host this on GitHub Pages for free.
+              </p>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© <span id="year">2026</span> ToRo • Built with discipline.</p>
+        <p class="muted">
+          No copyrighted characters, logos, or quotes used — only original
+          styling.
+        </p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
