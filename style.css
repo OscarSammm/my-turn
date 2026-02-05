@@ -231,6 +231,72 @@ body {
   border-radius: 2px;
 }
 
+/* ABOUT: 2 half background images (full color, clean edges) */
+.about{
+  position: relative;
+  overflow: hidden;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.about__splitbg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.about__half{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* CHANGE THESE IMAGES */
+.about__half--left{
+  background-image: url("images/batman.jpeg");
+}
+
+.about__half--right{
+  background-image: url("images/batman2.jpeg");
+}
+
+/* overlay for readability (lower this if you want brighter photos) */
+.about__splitbg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.30);
+}
+
+/* content above the background */
+.about__inner{
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 18px;
+  color: #fff;
+}
+
+/* keep your panels readable on images */
+.about .panel,
+.about .panel--accent{
+  background: rgba(255,255,255,.88);
+  color: #1f1f1f;
+  border-color: rgba(255,255,255,.35);
+}
+
+@media (max-width: 940px){
+  .about__splitbg{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+
+
 /* User */
 .icon--user {
   border: 2px solid currentColor;
@@ -863,3 +929,4 @@ textarea:focus {
     transition: none !important;
   }
 }
+
