@@ -106,7 +106,7 @@ body{
 
 .topbar__right{ display:flex; gap:14px; align-items:center; justify-content:flex-end; }
 
-/* mini links (small letters like screenshot) */
+
 .mininav{
   display:flex;
   gap: 22px;
@@ -116,9 +116,10 @@ body{
 .mininav a{
   text-decoration:none;
   color: var(--text);
-  font-size: .95rem;  /* small */
+  font-size: .82rem;  
   font-weight: 500;
   opacity: .85;
+  letter-spacing: .02em; 
 }
 
 .mininav a:hover{
@@ -148,12 +149,10 @@ body{
 }
 
 .wordmark{
-  font-weight: 900;
-  font-size: 2rem;
-  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  color: var(--text);
-  line-height: 1;
 }
 
 .icon{
@@ -253,10 +252,9 @@ body{
 }
 
 .logo{
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  border-radius: 999px; /* optional */
+  height: 100px;     
+  width: auto;
+  display: block;
 }
 
 .mark__ring{
@@ -312,22 +310,25 @@ main{max-width:var(--max); margin:0 auto; padding: 22px 18px 70px}
   display:grid;
   grid-template-columns: 1.2fr .8fr;
   gap: 22px;
-  padding: 22px 0 8px;
+  padding: 40px 0 30px;
   position:relative;
 }
 
 .hero__bg{
   position:absolute;
-  inset:-80px -120px -90px -120px;
+  left: 0;
+  right: 0;
+  top: -30px;
+
+  height: 80vh;                /* stops around “middle” */
+  max-height: 520px;           /* don’t let it get too tall */
+  min-height: 320px;           /* don’t let it get too short */
+
   z-index:-1;
-  opacity:.9;
   pointer-events:none;
 
-  /* CLEAN background (no grid/boxes) */
-  background:
-    radial-gradient(900px 480px at 30% 20%, color-mix(in srgb, var(--gold) 10%, transparent) 0%, transparent 60%),
-    radial-gradient(820px 520px at 75% 30%, color-mix(in srgb, var(--gold) 8%, transparent) 0%, transparent 62%);
-  filter: blur(.2px);
+  background: url("images/uvu.jpeg") center top / contain no-repeat;
+  opacity: 1;
 }
 
 
