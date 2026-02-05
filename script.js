@@ -438,3 +438,18 @@ function openCommandPanel(navLinks) {
 
   toast("Ctrl/Cmd + K to open. Esc to close.", 1200);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const topbar = document.querySelector(".topbar");
+  const hero = document.querySelector(".hero");
+  if (!topbar || !hero) return;
+
+  const update = () => {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    topbar.classList.toggle("topbar--solid", heroBottom <= 80);
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+});
+
