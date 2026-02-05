@@ -307,7 +307,7 @@ main {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1.25fr 0.9fr;
-  align-items: end;
+  align-items: center;
   gap: 22px;
 
   padding: 140px 8% 70px;
@@ -347,6 +347,19 @@ main {
   color: #fff;
   max-width: 720px;
 }
+
+.hero__content.minimal{
+  max-width: 680px;
+}
+
+.hero__kicker{
+  font-size: 12px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-bottom: 22px;
+}
+
 .kicker {
   margin: 0 0 10px;
   color: rgba(255, 255, 255, 0.75);
@@ -355,20 +368,21 @@ main {
   text-transform: uppercase;
   font-size: 0.78rem;
 }
-.hero__title {
-  margin: 0;
-  font-family: var(--fontDisplay);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  font-size: clamp(44px, 5vw, 80px);
-  line-height: 1.02;
+.hero__title{
+  font-size: clamp(48px, 6vw, 84px);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0 0 22px;
 }
-.hero__subtitle {
-  margin: 16px 0 0;
+.hero__subtitle{
   font-size: 18px;
-  line-height: 1.6;
-  max-width: 62ch;
-  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  opacity: .85;
+  margin-bottom: 32px;
+}
+
+.hero__actions{
+  margin-top: 10px;
 }
 
 .glow {
