@@ -960,6 +960,142 @@ main {
   );
 }
 
+/* FLIP CARDS (works with your workGrid tiles) */
+.flipCard{
+  perspective: 1200px;
+}
+
+.flipCard__inner{
+  position: relative;
+  width: 100%;
+  height: 560px; /* match your tile height */
+  transform-style: preserve-3d;
+  transition: transform .7s cubic-bezier(.2,.8,.2,1);
+}
+
+/* desktop hover */
+.flipCard:hover .flipCard__inner{
+  transform: rotateY(180deg);
+}
+
+/* mobile click */
+.flipCard.is-flipped .flipCard__inner{
+  transform: rotateY(180deg);
+}
+
+/* faces */
+.flipCard__front,
+.flipCard__back{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* FRONT (visible first) */
+.flipCard__front{
+  transform: rotateY(0deg);
+  display: block; /* keep as block */
+  background: var(--img) center/cover no-repeat;
+}
+
+/* BACK (shown after flip) */
+.flipCard__back{
+  transform: rotateY(180deg);
+  background: #0b0b0b;
+  display: grid;
+  align-items: stretch;
+}
+
+
+.flipBack__content{
+  padding: 26px;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* title, text, buttons */
+  gap: 18px;
+  height: 100%;
+}
+
+.flipBack__title{
+  margin: 0;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
+}
+
+.flipBack__text{
+  margin: 0;
+  color: rgba(255,255,255,.80);
+  line-height: 1.7;
+  font-size: 18px;
+  max-width: 46ch;
+}
+
+.flipBack__link{
+  width: fit-content;
+  padding: 14px 18px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.flipBack__link:hover{
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.65);
+}
+
+.flipBack__actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.flipBack__link{
+  padding: 16px 22px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.flipBack__close{
+  padding: 16px 22px;
+  background: transparent;
+  color: rgba(255,255,255,.75);
+  border: 1px solid rgba(255,255,255,.25);
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.flipBack__close:hover{
+  color:#fff;
+  border-color: rgba(255,255,255,.5);
+}
+
+
+/* match your responsive heights */
+@media (max-width: 1100px){
+  .flipCard__inner{ height: 520px; }
+}
+@media (max-width: 640px){
+  .flipCard__inner{ height: 520px; }
+}
+
+
 /* responsive */
 @media (max-width: 1100px){
   .cards.workGrid{ grid-template-columns: repeat(2, 1fr); }

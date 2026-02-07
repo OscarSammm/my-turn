@@ -82,3 +82,22 @@ function isTypingInInput() {
   const tag = el.tagName.toLowerCase();
   return tag === "input" || tag === "textarea" || el.isContentEditable;
 }
+
+// Flip cards: tap to flip + Back button
+document.querySelectorAll(".flipCard").forEach((card) => {
+  card.addEventListener("click", (e) => {
+    // Back button flips back
+    if (e.target.classList.contains("flipBack__close")) {
+      e.preventDefault();
+      card.classList.remove("is-flipped");
+      return;
+    }
+
+    // Clicking links should NOT toggle flip
+    if (e.target.closest("a")) return;
+
+    // Toggle flip
+    card.classList.toggle("is-flipped");
+  });
+});
+
