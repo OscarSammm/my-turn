@@ -1054,6 +1054,52 @@ main {
   );
 }
 
+/* Skills section: black background */
+#skills.section {
+  background: #000;
+  color: #fff;
+  padding: 90px 0;
+}
+
+#skills .section__head,
+#skills .grid-2 {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding:0 20px;
+}
+
+#skills { 
+  width: 100%; 
+}
+
+#skills .panel{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+#skills .section__title{
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+#skills .section__sub{
+  color: rgba(255,255,255,0.6);
+}
+
+#skills .panel__title{
+  color:#fff;
+  font-size: 22px;
+  margin: 0 0 18px;
+  letter-spacing: .02em;
+}
+
+
+
+
+
 /* =========================
    FORM
 ========================= */
