@@ -808,31 +808,34 @@ main {
 
 /* WORK like reference (image + text under) */
 .work{
-  padding: 70px 20px 90px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 70px 0 90px;
 }
+
 
 .work .section-title{
   text-align: center;
   letter-spacing: 0.25em;
   font-weight: 400;
   font-size: 25px;
-  margin: 0 0 18px;
+  margin-top: -12px;
+  margin-bottom: 18px;
   padding-top: 0;
   transform: translateY(-12px);
 }
 
 /* grid */
 .work-grid{
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 18px;
+  width: 100%;
+  padding: 0 24px;
 
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 4 equal big columns */
   gap: 32px;
-
-  overflow: visible; /* important */
 }
+
 
 
 /* card */
