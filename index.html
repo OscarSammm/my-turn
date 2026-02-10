@@ -98,46 +98,29 @@
         </section>
 
         <section id="about" class="section about">
-          <!-- split full-color background (50% / 50%) -->
-          <div class="about__splitbg" aria-hidden="true">
-            <div class="about__half about__half--left"></div>
-            <div class="about__half about__half--right"></div>
-          </div>
+          <div class="about__bg" aria-hidden="true"></div>
 
-          <!-- content stays on top -->
           <div class="about__inner">
-            <div class="section__head">
+            <div class="section__head about__head">
               <h2 class="section__title">About</h2>
               <p class="section__sub">Built with discipline.</p>
             </div>
 
-            <div class="grid-2">
-              <article class="panel">
-                <h3 class="panel__title">My story</h3>
-                <p>
-                  I’m ToRo — a student-athlete from San Pedro Sula, Honduras.
-                  Soccer built my discipline and resilience. Software
-                  engineering built my problem-solving and structure. I’m
-                  focused on consistent growth every day — on and off the field.
-                </p>
-              </article>
+            <div class="about__content">
+              <p class="about__lead">
+                I’m ToRo — a student-athlete from San Pedro Sula, Honduras.
+                Soccer built my discipline and resilience. Software engineering
+                built my problem-solving and structure. I’m focused on
+                consistent growth every day — on and off the field.
+              </p>
 
-              <aside class="panel panel--accent">
-                <h3 class="panel__title">Code of conduct</h3>
-                <ul class="bullets">
-                  <li>
-                    Do the work the right way, even when nobody’s watching.
-                  </li>
-                  <li>Stay disciplined in the small details.</li>
-                  <li>Keep learning. Stay humble.</li>
-                </ul>
-              </aside>
-            </div>
+              <ul class="about__bullets">
+                <li>Do the work the right way, even when nobody’s watching.</li>
+                <li>Stay disciplined in the small details.</li>
+                <li>Keep learning. Stay humble.</li>
+              </ul>
 
-            <div class="panel mt">
-              <h3 class="panel__title">Gadget loadout</h3>
-              <p class="muted">Tools I use to build.</p>
-              <div class="tags" aria-label="Tools and stack">
+              <div class="about__tags" aria-label="Tools and stack">
                 <span class="tag">VS Code</span>
                 <span class="tag">GitHub</span>
                 <span class="tag">HTML</span>
@@ -149,59 +132,33 @@
         </section>
 
         <!-- WORK -->
-        <section id="work" class="section workFull">
-          <div class="section__head workHead">
-            <h2 class="section__title workTitle">WORK</h2>
-          </div>
+        <section class="work" id="work">
+          <h2 class="section-title">WORK</h2>
 
-          <div class="cards workGrid">
-            <a
-              class="workcard workTile"
-              href="#contact"
-              style="--img: url(&quot;images/running.jpeg&quot;)"
-            >
-              <div class="workTile__overlay"></div>
-              <div class="workTile__content">
-                <h3 class="workcard__title">Running</h3>
-                <div class="workTile__btn">View</div>
+          <div class="work-grid">
+            <article class="work-card">
+              <img src="images/running.jpeg" alt="Running" class="work-img" />
+              <div class="work-body">
+                <h3>Running</h3>
+                <p>Short description here. 1–2 lines max.</p>
               </div>
-            </a>
+            </article>
 
-            <a
-              class="workcard workTile"
-              href="#contact"
-              style="--img: url(&quot;images/tamusa.jpeg&quot;)"
-            >
-              <div class="workTile__overlay"></div>
-              <div class="workTile__content">
-                <h3 class="workcard__title">Soccer</h3>
-                <div class="workTile__btn">View</div>
+            <article class="work-card">
+              <img src="images/tamusa.jpeg" alt="Soccer" class="work-img" />
+              <div class="work-body">
+                <h3>Soccer</h3>
+                <p>Short description here. 1–2 lines max.</p>
               </div>
-            </a>
+            </article>
 
-            <a
-              class="workcard workTile"
-              href="#contact"
-              style="--img: url(&quot;images/jiu.jpeg&quot;)"
-            >
-              <div class="workTile__overlay"></div>
-              <div class="workTile__content">
-                <h3 class="workcard__title">Jiu Jitsu</h3>
-                <div class="workTile__btn">View</div>
+            <article class="work-card">
+              <img src="images/jiu.jpeg" alt="Jiu Jitsu" class="work-img" />
+              <div class="work-body">
+                <h3>Jiu Jitsu</h3>
+                <p>Short description here. 1–2 lines max.</p>
               </div>
-            </a>
-
-            <a
-              class="workcard workTile"
-              href="#contact"
-              style="--img: url(&quot;images/gym2.jpeg&quot;)"
-            >
-              <div class="workTile__overlay"></div>
-              <div class="workTile__content">
-                <h3 class="workcard__title">Gym</h3>
-                <div class="workTile__btn">View</div>
-              </div>
-            </a>
+            </article>
           </div>
         </section>
 

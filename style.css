@@ -29,10 +29,10 @@
   --radius: 18px;
   --max: 1120px;
 
-  --fontDisplay: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial;
-  --fontBody: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial;
+  --fontDisplay:
+    ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --fontBody:
+    ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
 
 /* =========================
@@ -117,7 +117,10 @@ body {
   background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .topbar__left {
@@ -207,8 +210,8 @@ body {
 
 /* Hamburger */
 .icon--menu {
-  background: linear-gradient(currentColor, currentColor) 0 3px / 18px 2px
-      no-repeat,
+  background:
+    linear-gradient(currentColor, currentColor) 0 3px / 18px 2px no-repeat,
     linear-gradient(currentColor, currentColor) 0 8px / 18px 2px no-repeat,
     linear-gradient(currentColor, currentColor) 0 13px / 18px 2px no-repeat;
 }
@@ -231,14 +234,15 @@ body {
   border-radius: 2px;
 }
 
-html, body{
+html,
+body {
   overflow-x: hidden;
 }
 
 /* =========================
    HERO (FULL BLEED)
 ========================= */
-.hero{
+.hero {
   position: relative;
   isolation: isolate;
   min-height: 100vh;
@@ -256,7 +260,7 @@ html, body{
 }
 
 /* background image + gradient */
-.hero__bg{
+.hero__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -264,9 +268,9 @@ html, body{
   background-image:
     linear-gradient(
       90deg,
-      rgba(0,0,0,0.55) 0%,
-      rgba(0,0,0,0.18) 55%,
-      rgba(0,0,0,0.06) 100%
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.18) 55%,
+      rgba(0, 0, 0, 0.06) 100%
     ),
     url("images/torofut.jpeg");
 
@@ -278,53 +282,177 @@ html, body{
 }
 
 /* extra dark layer */
-.hero::before{
-  content:"";
+.hero::before {
+  content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(0,0,0,0.18);
+  background: rgba(0, 0, 0, 0.18);
 }
 
 /* content above bg */
-.hero__content{
+.hero__content {
   position: relative;
   z-index: 2;
   color: #fff;
   max-width: 720px;
 }
-.hero__content.minimal{ max-width: 680px; }
+.hero__content.minimal {
+  max-width: 680px;
+}
 
-.hero__kicker{
+.hero__kicker {
   font-size: 12px;
-  letter-spacing: .35em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 22px;
 }
 
-.hero__title{
+.hero__title {
   font-size: clamp(48px, 6vw, 84px);
   font-weight: 700;
   line-height: 1.05;
   margin: 0 0 22px;
 }
 
-.hero__subtitle{
+.hero__subtitle {
   font-size: 18px;
   line-height: 1.7;
-  opacity: .85;
+  opacity: 0.85;
   margin-bottom: 32px;
 }
 
-.hero__actions{
+.hero__actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
 
+/* remove the normal section padding for About so it can go full-width */
+/* ============ ABOUT (full-bleed bg + centered minimal) ============ */
 
+.about.section {
+  padding: 0; /* override .section padding */
+}
+
+.about {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  min-height: 100vh;
+  padding-top: 140px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("./images/uvu.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* force centered header (this is what you wanted) */
+.about__head {
+  text-align: center;
+  justify-content: center !important;
+  align-items: center !important;
+  display: grid !important;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.about .section__title {
+  font-size: clamp(38px, 4.5vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 0;
+}
+
+.about .section__sub {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0.28em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.about__content {
+  max-width: 72ch;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  gap: 18px;
+}
+
+.about__lead {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 16.5px;
+  line-height: 1.9;
+}
+
+/* clean bullets */
+.about__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.about__bullets li {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+.about__bullets li::before {
+  content: "•";
+  margin-right: 10px;
+  opacity: 0.8;
+}
+
+.about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+/* re-skin tags for this section */
+.about .tag {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  border-radius: 999px;
+}
 
 /* User */
 .icon--user {
@@ -394,83 +522,13 @@ main {
   padding: 0; /* IMPORTANT: hero breaks out; sections add padding */
 }
 
-/* =========================
-   ABOUT (2-IMAGE SPLIT BG)
-========================= */
-.about{
-  position: relative;
-  overflow: hidden;
-
-  /* full width but safe */
-  width: 100%;
-  margin: 0;
-  padding: 120px 0;
-  min-height: 90vh;
-}
-
-/* background layer split 50/50 */
-.about__splitbg{
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-/* each half */
-.about__half{
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* set the two images */
-.about__half--left{
-  background-image: url("images/uvu.jpeg");
-}
-.about__half--right{
-  background-image: url("images/batman2.jpeg");
-}
-
-/* dark overlay on top of both images */
-.about__splitbg::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,.50);
-}
-
-/* content above the background */
-.about__inner{
-  position: relative;
-  z-index: 1;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 18px;
-}
-
-/* make panels readable (you can make this more minimal later) */
-.about .panel{
-  background: rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.14);
-  color: #fff;
-  box-shadow: none;
-}
-
-.about .muted{ color: rgba(255,255,255,0.75); }
-.about .section__title{ color: #fff; }
-.about .section__sub{ color: rgba(255,255,255,0.9); }
-
 /* mobile: stack images top/bottom */
-@media (max-width: 940px){
-  .about__splitbg{
+@media (max-width: 940px) {
+  .about__splitbg {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
 }
-
-
 
 .glow {
   color: #fff;
@@ -497,7 +555,10 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: transparent;
   color: #fff;
-  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
 }
 .btn:hover {
   transform: translateY(-1px);
@@ -745,173 +806,77 @@ main {
   font-size: 0.9rem;
 }
 
-/* =========================
-   WORK CARDS
-========================= */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 14px;
+/* WORK like reference (image + text under) */
+.work{
+  padding: 70px 20px 90px;
 }
 
-.workcard {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--panel) 60%, transparent),
-    color-mix(in srgb, var(--panel2) 70%, transparent)
-  );
-  box-shadow: var(--shadow);
-  padding: 16px;
-  position: relative;
-  overflow: hidden;
-}
-.workcard::before {
-  content: "";
-  position: absolute;
-  inset: auto -60px -60px auto;
-  width: 240px;
-  height: 240px;
-  background: radial-gradient(
-    circle at 30% 30%,
-    color-mix(in srgb, var(--gold) 18%, transparent),
-    transparent 70%
-  );
-  transform: rotate(18deg);
-  opacity: 0.8;
-}
-.workcard__top {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-/* WORK: keep .cards/.workcard but style like category tiles */
-.workFull{
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding: 70px 0 90px;
-}
-
-.workHead{
-  justify-content: center;
+.work .section-title{
   text-align: center;
-  padding: 0 18px;
-  margin-bottom: 28px;
+  letter-spacing: 0.25em;
+  font-weight: 400;
+  font-size: 25px;
+  margin: 0 0 18px;
+  padding-top: 0;
+  transform: translateY(-12px);
 }
 
-.workTitle{
-  font-size: 18px;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-/* reuse your .cards container */
-.cards.workGrid{
+/* grid */
+.work-grid{
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 18px;
 
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
 }
 
-/* reuse your .workcard but turn into image tiles */
-.workcard.workTile{
-  position: relative;
-  display: block;
-  height: 560px;
-  padding: 0;
+/* card */
+.work-card{
+  border: 1px solid var(--line);
   border-radius: 0;
-  border: none;
-  box-shadow: none;
-
+  background: #fff;
   overflow: hidden;
-  text-decoration: none;
-  color: #fff;
-
-  background: var(--img) center/cover no-repeat !important;
-  transform: translateY(0);
 }
 
-/* gradient overlay */
-.workTile__overlay{
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.72) 0%,
-    rgba(0,0,0,.25) 45%,
-    rgba(0,0,0,.10) 100%
-  );
+/* image */
+.work-img{
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
 }
 
-/* bottom text area */
-.workTile__content{
-  position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: 22px;
-  display: grid;
-  gap: 14px;
-  z-index: 1;
-  transform: translateY(18px);
-  transition: transform .45s ease;
+/* text under */
+.work-body{
+  padding: 18px 18px 24px;
 }
 
-.workcard.workTile .workcard__title{
-  margin: 0;
-  font-size: 34px;
+.work-body h3{
+  margin: 0 0 10px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.05;
-  color: #fff;
+  color: var(--text);
 }
 
-.workcard.workTile:hover .workTile__content{
-  transform: translateY(0);
-}
-
-/* button */
-.workTile__btn{
-  width: fit-content;
-  padding: 14px 18px;
-  background: rgba(0,0,0,.80);
-  border: 1px solid rgba(255,255,255,.25);
-  font-weight: 800;
-  letter-spacing: .10em;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-/* hover */
-.workcard.workTile:hover{
-  transform: translateY(-2px);
-}
-.workcard.workTile:hover .workTile__overlay{
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.78) 0%,
-    rgba(0,0,0,.28) 45%,
-    rgba(0,0,0,.12) 100%
-  );
+.work-body p{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 /* responsive */
-@media (max-width: 1100px){
-  .cards.workGrid{ grid-template-columns: repeat(2, 1fr); }
-  .workcard.workTile{ height: 520px; }
+@media (max-width: 1000px){
+  .work-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .work-grid{ grid-template-columns: 1fr; }
+  .work-img{ height: 280px; }
 }
 
-@media (max-width: 640px){
-  .cards.workGrid{ grid-template-columns: 1fr; }
-  .workcard.workTile{ height: 520px; }
-}
+
 
 .badge {
   display: inline-flex;
@@ -960,7 +925,6 @@ main {
   text-decoration: underline;
 }
 
-
 /* =========================
    SKILLS
 ========================= */
@@ -1002,40 +966,36 @@ main {
 #skills .grid-2 {
   max-width: var(--max);
   margin: 0 auto;
-  padding:0 20px;
+  padding: 0 20px;
 }
 
-#skills { 
-  width: 100%; 
+#skills {
+  width: 100%;
 }
 
-#skills .panel{
+#skills .panel {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
 }
 
-#skills .section__title{
+#skills .section__title {
   font-size: 52px;
   line-height: 1;
   margin-bottom: 12px;
 }
 
-#skills .section__sub{
-  color: rgba(255,255,255,0.6);
+#skills .section__sub {
+  color: rgba(255, 255, 255, 0.6);
 }
 
-#skills .panel__title{
-  color:#fff;
+#skills .panel__title {
+  color: #fff;
   font-size: 22px;
   margin: 0 0 18px;
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
 }
-
-
-
-
 
 /* =========================
    FORM
