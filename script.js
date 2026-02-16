@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const topbar = document.querySelector(".topbar");
   const hero = document.querySelector(".hero");
 
-  // You use .mininav in HTML (not .nav)
-  const navLinks = Array.from(document.querySelectorAll('.mininav a[href^="#"]'));
+  // nav links
+  const navLinks = Array.from(
+    document.querySelectorAll('.mininav a[href^="#"]')
+  );
 
   // ---------- 1) Theme toggle (save + load) ----------
   if (themeToggle) {
@@ -22,37 +24,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // ---------- 3) Cadence topbar behavior ----------
-  // Transparent over hero, turns solid after you scroll past hero
+  // ---------- 3) Topbar scroll behavior ----------
   const updateTopbar = () => {
     if (!topbar) return;
 
-    // If no hero exists, just solid after a tiny scroll
-    if (!hero) {
-      topbar.classList.toggle("topbar--solid", window.scrollY > 10);
+    // If hero exists: become solid after leaving hero
+    if (hero) {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      const makeSolid = heroBottom <= 80;
+      topbar.classList.toggle("topbar--solid", makeSolid);
       return;
     }
 
-    const heroBottom = hero.getBoundingClientRect().bottom;
-    const makeSolid = heroBottom <= 80;
-
-    topbar.classList.toggle("topbar--solid", makeSolid);
-
-    // Make icons/text dark when solid, white when on hero
-    topbar.style.color = makeSolid ? "#1f1f1f" : "#ffffff";
+    // If no hero: become solid after small scroll
+    topbar.classList.toggle("topbar--solid", window.scrollY > 40);
   };
 
   window.addEventListener("scroll", updateTopbar, { passive: true });
   updateTopbar();
 
-  // ---------- 4) Smooth scroll for nav links ----------
+  // ---------- 4) Smooth scroll ----------
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       const targetId = link.getAttribute("href");
       if (!targetId) return;
 
       const target = document.querySelector(targetId);
-      if (!target) return; // if section doesn't exist, do nothing
+      if (!target) return;
 
       e.preventDefault();
       target.scrollIntoView({
@@ -69,6 +67,19 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks[0]?.focus();
     }
   });
+
+  // ---------- 6) Flip cards ----------
+  document.querySelectorAll(".flipCard").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (e.target.classList.contains("flipBack__close")) {
+        e.preventDefault();
+        card.classList.remove("is-flipped");
+        return;
+      }
+      if (e.target.closest("a")) return;
+      card.classList.toggle("is-flipped");
+    });
+  });
 });
 
 // helpers
@@ -82,22 +93,3 @@ function isTypingInInput() {
   const tag = el.tagName.toLowerCase();
   return tag === "input" || tag === "textarea" || el.isContentEditable;
 }
-
-// Flip cards: tap to flip + Back button
-document.querySelectorAll(".flipCard").forEach((card) => {
-  card.addEventListener("click", (e) => {
-    // Back button flips back
-    if (e.target.classList.contains("flipBack__close")) {
-      e.preventDefault();
-      card.classList.remove("is-flipped");
-      return;
-    }
-
-    // Clicking links should NOT toggle flip
-    if (e.target.closest("a")) return;
-
-    // Toggle flip
-    card.classList.toggle("is-flipped");
-  });
-});
-

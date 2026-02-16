@@ -99,6 +99,11 @@ body {
   position: relative;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* =========================
    TOP BAR (CADENCE STYLE)
 ========================= */
@@ -142,11 +147,6 @@ body {
   justify-content: flex-end;
 }
 
-.topbar--solid {
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
-}
-
 .mininav {
   display: flex;
   gap: 22px;
@@ -155,7 +155,6 @@ body {
 
 .mininav a {
   text-decoration: none;
-  color: #fff;
   font-size: 0.82rem;
   font-weight: 500;
   opacity: 0.9;
@@ -176,13 +175,13 @@ body {
   cursor: pointer;
   display: grid;
   place-items: center;
-  color: #fff;
 }
 
 .iconbtn--menu {
   display: none;
 }
 
+/* hover (transparent state) */
 .iconbtn:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.18);
@@ -193,6 +192,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  text-decoration: none;
+  color: #fff; /* controls SVG via currentColor */
 }
 
 .icon {
@@ -228,9 +229,58 @@ body {
   border-radius: 2px;
 }
 
-html,
-body {
-  overflow-x: hidden;
+/* ===== NAV COLORS (DEFAULT ON HERO) ===== */
+.topbar .mininav a,
+.topbar .iconbtn {
+  color: #fff;
+}
+
+/* ===== NAV COLORS (SCROLLED / SOLID) ===== */
+.topbar.topbar--solid {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar.topbar--solid .mininav a,
+.topbar.topbar--solid .iconbtn {
+  color: #111;
+}
+
+/* make the logo switch too (because it uses currentColor) */
+.topbar.topbar--solid .wordmark {
+  color: #111;
+}
+
+/* nicer hover when solid */
+.topbar.topbar--solid .iconbtn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   LOGO (SVG TEXT)
+========================= */
+.logo-svg {
+  height: 80px; /* controls logo size */
+  width: auto;
+  display: block;
+}
+
+/* Use currentColor so navbar can flip white->black */
+.logo-main {
+  font-size: 120px;
+  font-weight: 900;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  fill: currentColor;
+  letter-spacing: 0.02em;
+}
+
+.logo-sub {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  fill: currentColor;
+  letter-spacing: 0.25em;
 }
 
 /* =========================
@@ -292,10 +342,11 @@ body {
   max-width: 720px;
 }
 
-.logo{
-  height: 90px;        /* change to what you want */
+/* legacy image logo (safe to keep if you still use it anywhere) */
+.logo {
+  height: 90px;
   width: auto;
-  max-width: 260px;    /* safety */
+  max-width: 260px;
   display: block;
 }
 
@@ -332,11 +383,11 @@ body {
   margin-top: 20px;
 }
 
-/* remove the normal section padding for About so it can go full-width */
-/* ============ ABOUT (full-bleed bg + centered minimal) ============ */
-
+/* =========================
+   ABOUT (full-bleed bg + centered minimal)
+========================= */
 .about.section {
-  padding: 0; /* override .section padding */
+  padding: 0;
 }
 
 .about {
@@ -373,7 +424,6 @@ body {
   padding: 0 18px;
 }
 
-/* force centered header (this is what you wanted) */
 .about__head {
   text-align: center;
   justify-content: center !important;
@@ -415,7 +465,6 @@ body {
   line-height: 1.9;
 }
 
-/* clean bullets */
 .about__bullets {
   list-style: none;
   padding: 0;
@@ -444,7 +493,6 @@ body {
   margin-top: 6px;
 }
 
-/* re-skin tags for this section */
 .about .tag {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -456,80 +504,13 @@ body {
   border-radius: 999px;
 }
 
-/* User */
-.icon--user {
-  border: 2px solid currentColor;
-  border-radius: 999px;
-  box-sizing: border-box;
-}
-.icon--user::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  border: 2px solid currentColor;
-  border-radius: 999px;
-  transform: translate(-50%, -65%);
-  box-sizing: border-box;
-}
-
-/* Bag */
-.icon--bag {
-  border: 2px solid currentColor;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-.icon--bag::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: -6px;
-  width: 12px;
-  height: 8px;
-  border: 2px solid currentColor;
-  border-bottom: none;
-  border-radius: 10px 10px 0 0;
-  transform: translateX(-50%);
-  box-sizing: border-box;
-}
-
-/* cart count */
-.iconbtn--badge {
-  position: relative;
-}
-.badgeDot {
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  min-width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.9);
-  color: #111;
-  font-weight: 900;
-  font-size: 0.75rem;
-  display: grid;
-  place-items: center;
-}
-
 /* =========================
    LAYOUT
 ========================= */
 main {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0; /* IMPORTANT: hero breaks out; sections add padding */
-}
-
-/* mobile: stack images top/bottom */
-@media (max-width: 940px) {
-  .about__splitbg {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
+  padding: 0;
 }
 
 .glow {
@@ -537,14 +518,9 @@ main {
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
 }
 
-/* buttons */
-.hero__actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
+/* =========================
+   BUTTONS
+========================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -585,35 +561,9 @@ main {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* stats */
-.hero__stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 34px;
-}
-.stat {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 18px;
-  padding: 16px 18px;
-}
-.stat__num {
-  opacity: 0.75;
-  letter-spacing: 0.15em;
-  font-size: 0.9rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.9);
-}
-.stat__label {
-  margin-top: 6px;
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-
-/* dossier right */
+/* =========================
+   DOSSIER RIGHT (unchanged)
+========================= */
 .hero__card {
   align-self: end;
   justify-self: end;
@@ -621,16 +571,15 @@ main {
   z-index: 2;
 }
 
-/* card */
 .card {
   border: none;
   background: transparent;
   box-shadow: none;
-  border-radius: 0;   
-  padding: 0;         
+  border-radius: 0;
+  padding: 0;
   width: 100%;
   position: relative;
-  overflow: visible;  /* optional */
+  overflow: visible;
   color: #1f1f1f;
 }
 
@@ -641,76 +590,6 @@ main {
 .card::before {
   content: none;
 }
-.card__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-.chip {
-  font-size: 0.75rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(31, 31, 31, 0.85);
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(184, 146, 74, 0.35);
-  padding: 0.35rem 0.55rem;
-  border-radius: 999px;
-}
-.pulse {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(184, 146, 74, 0.9);
-  box-shadow: 0 0 0 0 rgba(184, 146, 74, 0.35);
-  animation: ping 1.6s ease-out infinite;
-}
-@keyframes ping {
-  0% {
-    box-shadow: 0 0 0 0 rgba(184, 146, 74, 0.35);
-  }
-  70% {
-    box-shadow: 0 0 0 16px transparent;
-  }
-  100% {
-    box-shadow: 0 0 0 0 transparent;
-  }
-}
-
-.card__title {
-  margin: 10px 0 10px;
-  font-size: 1.35rem;
-}
-.dossier {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 10px;
-}
-.dossier li {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px 10px;
-  border: 1px solid rgba(216, 203, 179, 0.7);
-  border-radius: 14px;
-  background: rgba(251, 246, 237, 0.7);
-}
-.dossier__k {
-  color: var(--muted);
-  font-weight: 700;
-}
-.dossier__v {
-  font-weight: 900;
-  letter-spacing: 0.02em;
-}
-.fineprint {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
 
 /* =========================
    SECTIONS (CONSTRAINED)
@@ -718,98 +597,18 @@ main {
 .section {
   padding: 34px 18px 6px;
 }
-.section__head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.section__title {
-  margin: 0;
-  font-size: 1.85rem;
-  letter-spacing: -0.02em;
-}
-.section__sub {
-  margin: 0;
-  color: var(--muted);
-  max-width: 62ch;
-}
 
-/* grids */
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 14px;
-}
-
-.panel {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: color-mix(in srgb, var(--panel) 55%, transparent);
-  box-shadow: var(--shadow);
-  padding: 16px;
-}
-.panel--accent {
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--gold) 9%, var(--panel)),
-    color-mix(in srgb, var(--blue) 7%, var(--panel2))
-  );
-  border-color: color-mix(in srgb, var(--gold) 25%, var(--line));
-}
-.panel__title {
-  margin: 0 0 8px;
-  font-size: 1.15rem;
-}
-.muted {
-  color: var(--muted);
-}
-.mt {
-  margin-top: 16px;
-}
-
-.bullets {
-  margin: 10px 0 0;
-  padding-left: 18px;
-  color: var(--text);
-}
-.bullets li {
-  margin: 8px 0;
-}
-.divider {
-  height: 1px;
-  background: var(--line);
-  margin: 14px 0;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 12px;
-}
-.tag {
-  display: inline-flex;
-  padding: 0.45rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
-  background: color-mix(in srgb, var(--panel2) 35%, transparent);
-  font-weight: 800;
-  font-size: 0.9rem;
-}
-
-/* WORK like reference (image + text under) */
-.work{
+/* =========================
+   WORK (NO BOXES)
+========================= */
+.work {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding: 70px 0 90px;
 }
 
-
-.work .section-title{
+.work .section-title {
   text-align: center;
   letter-spacing: 0.25em;
   font-weight: 400;
@@ -820,145 +619,64 @@ main {
   transform: translateY(-12px);
 }
 
-/* grid */
-.work-grid{
+.work-grid {
   width: 100%;
   padding: 0 24px;
-
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal big columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
 
-
-
-/* card */
-.work-card{
+.work-card {
   border: none;
   background: transparent;
   box-shadow: none;
   padding: 0;
 }
 
-/* image */
-.work-img{
+.work-img {
   width: 100%;
-  height: 460px;          /* normal */
-  object-fit: cover;       /* crops instead of stretching */
-  object-position: center; /* keeps subject centered */
+  height: 460px;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-
-
-/* text under */
-.work-body{
+.work-body {
   padding: 18px 18px 24px;
 }
 
-.work-body h3{
+.work-body h3 {
   margin: 0 0 10px;
   font-size: 20px;
   font-weight: 500;
   color: var(--text);
 }
 
-.work-body p{
+.work-body p {
   margin: 0;
   font-size: 14px;
   line-height: 1.6;
   color: var(--muted);
 }
 
-/* responsive */
-@media (max-width: 1000px){
-  .work-grid{ grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 1000px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-@media (max-width: 640px){
-  .work-grid{ grid-template-columns: 1fr; }
-  .work-img{ height: 280px; }
-}
-
-
-
-.badge {
-  display: inline-flex;
-  padding: 0.32rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border: 1px solid color-mix(in srgb, var(--gold) 25%, var(--line));
-  background: color-mix(in srgb, var(--bg) 18%, transparent);
-  color: color-mix(in srgb, var(--gold) 78%, var(--text));
-}
-.badge--ghost {
-  border-color: color-mix(in srgb, var(--blue) 25%, var(--line));
-  color: color-mix(in srgb, var(--blue) 75%, var(--text));
-}
-.workcard__title {
-  margin: 0 0 8px;
-  font-size: 1.25rem;
-}
-.workcard__desc {
-  margin: 0 0 10px;
-  color: var(--muted);
-}
-.mini {
-  margin: 0;
-  padding-left: 18px;
-  color: var(--text);
-}
-.mini li {
-  margin: 6px 0;
-}
-.workcard__actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 12px;
-}
-.link {
-  color: color-mix(in srgb, var(--blue) 70%, var(--text));
-  text-decoration: none;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-}
-.link:hover {
-  text-decoration: underline;
+@media (max-width: 640px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  .work-img {
+    height: 280px;
+  }
 }
 
 /* =========================
-   SKILLS
+   SKILLS (BLACK BG)
 ========================= */
-.skill {
-  margin-top: 12px;
-}
-.skill__row {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font-weight: 800;
-}
-.bar {
-  height: 10px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--line) 60%, transparent);
-  overflow: hidden;
-  margin-top: 8px;
-}
-.bar span {
-  display: block;
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--gold) 60%, var(--text)),
-    color-mix(in srgb, var(--blue) 60%, var(--text))
-  );
-}
-
-/* Skills section: black background */
 #skills.section {
   background: #000;
   color: #fff;
@@ -1066,9 +784,6 @@ textarea:focus {
     width: 100%;
   }
 
-  .cards {
-    grid-template-columns: 1fr;
-  }
   .grid-2 {
     grid-template-columns: 1fr;
   }
