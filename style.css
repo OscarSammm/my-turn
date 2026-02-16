@@ -195,12 +195,6 @@ body {
   gap: 10px;
 }
 
-.logo {
-  height: 90px;
-  width: auto;
-  display: block;
-}
-
 .icon {
   width: 18px;
   height: 18px;
@@ -297,6 +291,14 @@ body {
   color: #fff;
   max-width: 720px;
 }
+
+.logo{
+  height: 90px;        /* change to what you want */
+  width: auto;
+  max-width: 260px;    /* safety */
+  display: block;
+}
+
 .hero__content.minimal {
   max-width: 680px;
 }
@@ -621,31 +623,23 @@ main {
 
 /* card */
 .card {
-  border-radius: var(--radius);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: var(--shadow);
-  padding: 16px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;   
+  padding: 0;         
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: visible;  /* optional */
   color: #1f1f1f;
 }
+
 .card--glass {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  backdrop-filter: none;
 }
 .card::before {
-  content: "";
-  position: absolute;
-  inset: -40px -40px auto -40px;
-  height: 110px;
-  background: radial-gradient(
-    500px 150px at 30% 30%,
-    rgba(184, 146, 74, 0.22),
-    transparent 70%
-  );
-  opacity: 0.9;
+  content: none;
 }
 .card__top {
   display: flex;
@@ -840,10 +834,9 @@ main {
 
 /* card */
 .work-card{
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: #fff;
-  overflow: hidden;
+  border: none;
+  background: transparent;
+  box-shadow: none;
   padding: 0;
 }
 
