@@ -297,18 +297,11 @@ body {
   padding: 140px 8% 70px;
   overflow: hidden;
 
-  /* full-bleed */
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-}
 
-/* background image + gradient */
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-
+  /* ✅ put bg here */
   background-image:
     linear-gradient(
       90deg,
@@ -317,13 +310,16 @@ body {
       rgba(0, 0, 0, 0.06) 100%
     ),
     url("images/torofut.jpeg");
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 55%;
-
-  transform: scale(1.03);
 }
+
+/* ✅ disable the extra bg layer */
+.hero__bg {
+  display: none;
+}
+
 
 /* extra dark layer */
 .hero::before {
@@ -675,48 +671,132 @@ main {
 }
 
 /* =========================
-   SKILLS (BLACK BG)
+   SKILLS (MINIMAL OVERRIDE)
 ========================= */
-#skills.section {
+#skills.section{
   background: #000;
-  color: #fff;
-  padding: 90px 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  min-height: 100vh;   /* fills the whole screen height */
+  padding: 100px 0; 
 }
 
 #skills .section__head,
-#skills .grid-2 {
+#skills .grid-2{
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 20px;
 }
 
-#skills {
-  width: 100%;
+/* header */
+#skills .section__title{
+  font-size: 44px;
+  line-height: 1;
+  margin: 0 0 10px;
+}
+#skills .section__sub{
+  color: rgba(255,255,255,0.65);
 }
 
-#skills .panel {
+/* layout */
+#skills .grid-2{
+  margin-top: 28px;
+  gap: 36px;
+}
+
+/* kill “card/box” look */
+#skills .panel,
+#skills .panel--accent{
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
 }
 
-#skills .section__title {
-  font-size: 52px;
-  line-height: 1;
-  margin-bottom: 12px;
+/* titles look like tiny labels */
+#skills .panel__title{
+  font-size: 13px;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 14px;
 }
 
-#skills .section__sub {
-  color: rgba(255, 255, 255, 0.6);
+/* skill rows become clean list */
+#skills .skill{
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+#skills .skill:last-child{
+  border-bottom: none;
 }
 
-#skills .panel__title {
-  color: #fff;
-  font-size: 22px;
-  margin: 0 0 18px;
-  letter-spacing: 0.02em;
+#skills .skill__row{
+  font-weight: 700;
 }
+#skills .skill__row .muted{
+  color: rgba(255,255,255,0.55) !important;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* make bars super minimal (thin line) */
+#skills .bar{
+  height: 3px !important;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+}
+#skills .bar span{
+  height: 100%;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.75);
+}
+
+/* right column text */
+#skills .muted{
+  color: rgba(255,255,255,0.62) !important;
+}
+
+/* bullets minimal */
+#skills .bullets{
+  margin: 10px 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+#skills .bullets li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.85);
+}
+#skills .bullets li:last-child{
+  border-bottom: none;
+}
+
+/* divider softer */
+#skills .divider{
+  background: rgba(255,255,255,0.12);
+  margin: 18px 0;
+}
+
+/* achievements list minimal */
+#skills .mini{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+#skills .mini li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.85);
+}
+#skills .mini li:last-child{
+  border-bottom: none;
+}
+
 
 /* =========================
    FORM
