@@ -93,3 +93,23 @@ function isTypingInInput() {
   const tag = el.tagName.toLowerCase();
   return tag === "input" || tag === "textarea" || el.isContentEditable;
 }
+
+const toggle = document.getElementById("navToggle");
+const menu = document.getElementById("mobileMenu");
+
+if (toggle && menu) {
+  toggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  // close menu when clicking a link
+  menu.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      menu.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+} else {
+  console.log("Missing navToggle or mobileMenu in HTML");
+}
