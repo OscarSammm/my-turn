@@ -86,13 +86,35 @@
           </button>
         </div>
       </header>
-      <nav class="mobileMenu" id="mobileMenu" aria-label="Mobile">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <a href="index.html">1-on-1 Coaching</a>
-      </nav>
+      <div class="navOverlay" id="navOverlay"></div>
+
+      <aside class="sideNav" id="mobileMenu" aria-label="Mobile Navigation">
+        <button class="sideNav__close" id="navClose" aria-label="Close menu">
+          ✕
+        </button>
+
+        <div class="sideNav__brand">
+          <div class="brand-mark">
+            <div class="jp">偉大</div>
+            <div class="en">GREATNESS</div>
+          </div>
+        </div>
+
+        <nav class="sideNav__links">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <a href="index.html">1-on-1 Coaching</a>
+        </nav>
+
+        <div class="sideNav__footer">
+          <div class="sideNav__row">Account <span class="arrow">›</span></div>
+          <div class="sideNav__row">
+            United States <span class="arrow">⌄</span>
+          </div>
+        </div>
+      </aside>
 
       <main id="main">
         <section class="hero">

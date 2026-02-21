@@ -94,22 +94,30 @@ function isTypingInInput() {
   return tag === "input" || tag === "textarea" || el.isContentEditable;
 }
 
-const toggle = document.getElementById("navToggle");
-const menu = document.getElementById("mobileMenu");
+// ---------- Drawer mobile nav ----------
+const navToggle = document.getElementById("navToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+const navOverlay = document.getElementById("navOverlay");
+const navClose = document.getElementById("navClose");
 
-if (toggle && menu) {
-  toggle.addEventListener("click", () => {
-    const isOpen = menu.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-
-  // close menu when clicking a link
-  menu.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      menu.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-    });
-  });
-} else {
-  console.log("Missing navToggle or mobileMenu in HTML");
+function openDrawer() {
+  mobileMenu?.classList.add("is-open");
+  navOverlay?.classList.add("is-open");
+  navToggle?.setAttribute("aria-expanded", "true");
 }
+
+function closeDrawer() {
+  mobileMenu?.classList.remove("is-open");
+  navOverlay?.classList.remove("is-open");
+  navToggle?.setAttribute("aria-expanded", "false");
+}
+
+navToggle?.addEventListener("click", openDrawer);
+navClose?.addEventListener("click", closeDrawer);
+navOverlay?.addEventListener("click", closeDrawer);
+
+// close when clicking any link inside drawer
+mobileMenu?.querySelectorAll("a").forEach((a) => {
+  a.addEventListener("click", closeDrawer);
+});
+

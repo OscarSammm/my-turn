@@ -291,6 +291,120 @@ body {
   border-color: rgba(0, 0, 0, 0.12);
 }
 
+/* ===== Drawer Overlay ===== */
+.navOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 90;
+}
+.navOverlay.is-open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== Side Drawer ===== */
+.sideNav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(88vw, 360px);
+  background: #fff;
+  z-index: 100;
+
+  transform: translateX(-100%);
+  transition: transform 0.35s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 26px 26px 22px;
+}
+
+.sideNav.is-open{
+  transform: translateX(0);
+}
+
+/* Close X */
+.sideNav__close{
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Links */
+.sideNav__links{
+  margin-top: 40px;
+  display: grid;
+  gap: 22px;
+}
+
+.sideNav__links a{
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: #111;
+}
+
+/* Footer rows */
+.sideNav__footer{
+  border-top: 1px solid #eee;
+  padding-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.sideNav__row{
+  font-size: 15px;
+  color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow{ opacity: 0.7; }
+
+/* mobile only */
+@media (min-width: 941px){
+  .sideNav, .navOverlay{ display: none; }
+}
+
+.sideNav__brand {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+}
+
+.brand-mark {
+  text-align: center;
+  line-height: 1.05;
+}
+
+.brand-mark .jp {
+  font-size: 50px;
+  font-weight: 900;
+  color: #C63549
+}
+
+.brand-mark .en {
+  margin-top: 6px;
+  font-size: 8px;
+  font-weight: 1000;
+  letter-spacing: 2px;
+  color: #C63549;
+}
+
 /* =========================
    LOGO (SVG TEXT)
 ========================= */
