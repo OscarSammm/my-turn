@@ -1,48 +1,316 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Greatness — Running</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greatness — Running</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-  <header class="workPageHero">
-    <div class="workPageInner">
-      <h1>Running</h1>
-      <p>Speed, endurance, and clean form — built with a real plan.</p>
-      <a class="workLearnBtn" href="index.html#work">← Back</a>
+  <body class="articlePage">
+    <!-- Css-only theme toggle (same as index.html) -->
+    <input
+      class="sr-only"
+      type="checkbox"
+      id="themeToggle"
+      aria-label="Toggle lighttheme"
+    />
+
+    <div class="app">
+      <a class="skip" href="#main">Skip to content</a>
+
+      <!-- ✅ EXACT SAME NAV AS index.html (same classes + same IDs) -->
+      <header class="topbar">
+        <div class="topbar__left">
+          <!-- hamburger (hidden on desktop, shown on mobile) -->
+          <button
+            class="iconbtn iconbtn--menu"
+            id="navToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+          >
+            <span class="icon icon--menu" aria-hidden="true"></span>
+          </button>
+
+          <!-- mini nav (shown on desktop, hidden on mobile) -->
+          <nav class="mininav" aria-label="Site">
+            <!-- ✅ point to index sections -->
+            <a href="index.html#about">About</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="portfolio.html">Portfolio</a>
+          </nav>
+        </div>
+
+        <div class="topbar__center">
+          <!-- ✅ go back home -->
+          <a class="wordmark" href="index.html" aria-label="ToRo home">
+            <svg
+              class="logo-svg"
+              viewBox="0 0 420 200"
+              role="img"
+              aria-label="ToRo logo"
+            >
+              <text class="logo-main" x="60" y="120">偉大</text>
+              <text class="logo-sub" x="100" y="175">GREATNESS</text>
+            </svg>
+            <span class="sr-only">ToRo</span>
+          </a>
+        </div>
+
+        <div class="topbar__right">
+          <button class="iconbtn" type="button" aria-label="Search">
+            <span class="icon icon--search" aria-hidden="true"></span>
+          </button>
+
+          <button class="iconbtn" type="button" aria-label="Account">
+            <span class="icon icon--user" aria-hidden="true"></span>
+          </button>
+
+          <button
+            class="iconbtn iconbtn--badge"
+            type="button"
+            aria-label="Cart"
+          >
+            <span class="icon icon--bag" aria-hidden="true"></span>
+            <span class="badgeDot" aria-hidden="true">0</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="navOverlay" id="navOverlay"></div>
+
+      <aside class="sideNav" id="mobileMenu" aria-label="Mobile Navigation">
+        <button class="sideNav__close" id="navClose" aria-label="Close menu">
+          ✕
+        </button>
+
+        <div class="sideNav__brand">
+          <div class="brand-mark">
+            <div class="jp">偉大</div>
+            <div class="en">GREATNESS</div>
+          </div>
+        </div>
+
+        <nav class="sideNav__links">
+          <!-- ✅ point to index sections -->
+          <a href="index.html#programs">Programs</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="portfolio.html">Portfolio</a>
+        </nav>
+
+        <div class="sideNav__footer">
+          <div class="sideNav__row">Account <span class="arrow">›</span></div>
+          <div class="sideNav__row">
+            United States <span class="arrow">⌄</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ✅ ARTICLE -->
+      <main class="articleShell" id="main">
+        <header class="articleHeader">
+          <p class="articleKicker">Running</p>
+
+          <h1 class="articleTitle">My Engine. My Discipline. My Finish.</h1>
+
+          <p class="articleMeta">
+            <time datetime="2026-02-27">February 27, 2026</time>
+          </p>
+
+          <p class="articleIntro">
+            Running is where I build my engine. This page is my running mindset:
+            how I train speed and endurance, how I stay consistent, and why this
+            part of my routine makes me a better athlete.
+          </p>
+        </header>
+
+        <div class="articleGrid">
+          <article class="articleBody">
+            <!-- QUICK SNAPSHOT -->
+            <section class="articleSection" id="snapshot">
+              <h2>Quick Snapshot</h2>
+              <p>
+                I don’t run “just to run.” I run with purpose. Every session has
+                a reason: speed, conditioning, recovery, or mental toughness.
+              </p>
+
+              <ul class="articleList">
+                <li><strong>Focus:</strong> Speed + endurance</li>
+                <li><strong>Style:</strong> Consistent, controlled, disciplined</li>
+                <li>
+                  <strong>Strengths:</strong> tempo control, repeat effort,
+                  strong finish
+                </li>
+                <li>
+                  <strong>Why it matters:</strong> better engine, better
+                  recovery, better performance
+                </li>
+              </ul>
+            </section>
+
+            <!-- JOURNEY -->
+            <section class="articleSection" id="journey">
+              <h2>Journey</h2>
+              <p>
+                Running taught me patience. It’s not about one perfect day — it’s
+                about stacking good weeks. That mindset helped me in soccer,
+                school, and everything else.
+              </p>
+
+              <p>
+                Over time I learned how to listen to my body, stay consistent,
+                and still push when it’s time to push. That balance is the key.
+              </p>
+            </section>
+
+            <!-- WHY I RUN -->
+            <section class="articleSection" id="why">
+              <h2>Why I Run</h2>
+              <p>
+                Running is the foundation of my conditioning. It builds the
+                engine that lets me press, recover faster, and stay sharp late in
+                the game.
+              </p>
+
+              <ul class="articleList">
+                <li>
+                  <strong>Endurance:</strong> I can keep my level high for longer
+                </li>
+                <li>
+                  <strong>Mental toughness:</strong> I don’t quit when it gets hard
+                </li>
+                <li>
+                  <strong>Recovery:</strong> easy runs help me stay fresh
+                </li>
+                <li>
+                  <strong>Confidence:</strong> I trust my legs in the final minutes
+                </li>
+              </ul>
+            </section>
+
+            <!-- TRAINING STYLE -->
+            <section class="articleSection" id="training">
+              <h2>How I Train</h2>
+              <p>
+                I keep it simple: a mix of easy runs, tempo work, intervals, and
+                recovery. I don’t chase random workouts — I build progression.
+              </p>
+
+              <h3>Speed work</h3>
+              <ul class="articleList">
+                <li>Short intervals (fast reps, full effort)</li>
+                <li>Hills for power and mechanics</li>
+                <li>Strides to stay sharp</li>
+              </ul>
+
+              <h3>Endurance work</h3>
+              <ul class="articleList">
+                <li>Easy aerobic runs (base + recovery)</li>
+                <li>Tempo runs (controlled discomfort)</li>
+                <li>Longer steady efforts (engine building)</li>
+              </ul>
+            </section>
+
+            <!-- MY STANDARDS -->
+            <section class="articleSection" id="standards">
+              <h2>My Standards</h2>
+              <p>
+                Running is where I prove consistency to myself. Motivation comes
+                and goes, but my standard stays the same.
+              </p>
+
+              <ul class="articleList">
+                <li><strong>Consistency:</strong> I show up even on low days</li>
+                <li><strong>Form:</strong> I run smooth, not sloppy</li>
+                <li><strong>Recovery:</strong> sleep + mobility are training</li>
+                <li><strong>Progress:</strong> I track what matters</li>
+              </ul>
+            </section>
+
+            <!-- COACHING -->
+            <section class="articleSection" id="coaching">
+              <h2>How I Coach Running</h2>
+              <p>
+                If you want to get faster or build conditioning, I coach with the
+                same approach I use: structure, progression, and confidence.
+              </p>
+
+              <h3>Sessions usually include</h3>
+              <ul class="articleList">
+                <li>Warm-up + mechanics (posture, cadence, breathing)</li>
+                <li>Speed or tempo work (based on your level)</li>
+                <li>Short finisher + cooldown</li>
+                <li>Feedback + next focus</li>
+              </ul>
+            </section>
+
+            <!-- PROOF -->
+            <section class="articleSection" id="proof">
+              <h2>Proof & Progress</h2>
+              <p>
+                I’m building more clips and data from training. If you want a
+                plan or want to see how I train, message me and I’ll send what I
+                have.
+              </p>
+            </section>
+
+            <!-- CHAT / CTA -->
+            <section class="articleSection" id="chat">
+              <h2>Chat</h2>
+              <p>
+                Want help with speed, conditioning, or a weekly plan? Send me a
+                message and I’ll respond.
+              </p>
+
+              <p>
+                <a class="articleLink" href="index.html#contact">Go to Contact</a>
+                <span>or</span>
+                <a class="articleLink" href="index.html#pricing">See Coaching</a>
+              </p>
+            </section>
+          </article>
+
+          <!-- RIGHT SIDEBAR -->
+          <aside class="articleSide">
+            <div class="sideBlock">
+              <p class="sideTitle">On this page</p>
+              <div class="sideRule"></div>
+              <div class="sideLinks">
+                <a href="#snapshot">Quick Snapshot</a>
+                <a href="#journey">Journey</a>
+                <a href="#why">Why I Run</a>
+                <a href="#training">How I Train</a>
+                <a href="#standards">My Standards</a>
+                <a href="#coaching">How I Coach</a>
+                <a href="#proof">Proof</a>
+                <a href="#chat">Chat</a>
+              </div>
+            </div>
+
+            <div class="sideBlock">
+              <p class="sideTitle">Related</p>
+              <div class="sideRule"></div>
+              <div class="sideLinks">
+                <a href="soccer.html">Soccer</a>
+                <a href="gym.html">Gym</a>
+                <a href="jiujitsu.html">Jiu-Jitsu</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <footer class="articleFooter">
+          <a class="articleLink" href="index.html#work">← Back to Work</a>
+        </footer>
+      </main>
     </div>
-  </header>
 
-  <main class="workPageContent">
-    <section class="workPageSection">
-      <h2>What we focus on</h2>
-      <ul>
-        <li>Sprint mechanics (starts, posture, arm drive)</li>
-        <li>Acceleration + top speed work</li>
-        <li>Endurance sessions (tempo, intervals)</li>
-        <li>Mobility + injury prevention habits</li>
-      </ul>
-    </section>
-
-    <section class="workPageSection">
-      <h2>Who it’s for</h2>
-      <p>
-        Athletes who want to run faster, last longer, and feel more confident in their conditioning.
-      </p>
-    </section>
-
-    <section class="workPageSection">
-      <h2>What you’ll get</h2>
-      <ul>
-        <li>Weekly structure (so you’re not guessing)</li>
-        <li>Progress tracking and adjustments</li>
-        <li>Workouts that match your level</li>
-      </ul>
-      <a class="workLearnBtn" href="index.html#contact">Contact</a>
-    </section>
-  </main>
-</body>
+    <!-- ✅ keep this so the hamburger/drawer works -->
+    <script src="script.js"></script>
+  </body>
 </html>
