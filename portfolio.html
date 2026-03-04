@@ -46,7 +46,7 @@
           <nav class="mininav" aria-label="Site">
             <a href="#about">About</a>
             <a href="#work">Work</a>
-            <a href="#skills">Skills</a>
+            <a href="#lifestyle">The Lifestyle</a>
             <a href="#contact">Contact</a>
             <a href="index.html">1-on-1 Coaching</a>
           </nav>
@@ -103,7 +103,7 @@
         <nav class="sideNav__links">
           <a href="#about">About</a>
           <a href="#work">Work</a>
-          <a href="#skills">Skills</a>
+          <a href="#lifestyle">The Lifestyle</a>
           <a href="#contact">Contact</a>
           <a href="index.html">1-on-1 Coaching</a>
         </nav>
@@ -133,7 +133,7 @@
             <div class="hero__actions">
               <a href="#work" class="btn btn--primary">View Work</a>
               <a href="#about" class="btn btn--primary">Learn About Me</a>
-              <a href="#skills" class="btn btn--primary">See Skills</a>
+              <a href="#lifestyle" class="btn btn--primary">The Lifestyle</a>
               <a href="#contact" class="btn btn--primary">Contact Me</a>
             </div>
           </div>
@@ -240,69 +240,73 @@
           </div>
         </section>
 
-        <!-- SKILLS -->
-        <section id="skills" class="section">
-          <div class="section__head">
-            <h2 class="section__title">Skills</h2>
-            <p class="section__sub">
-              What I’m good at — and what I’m upgrading next.
+       <!-- THE LIFESTYLE (replaces Skills) -->
+<section class="lifestyle" id="lifestyle" aria-labelledby="lifestyleTitle">
+  <div class="lifestyle__inner">
+    <header class="lifestyle__head">
+      <h2 class="lifestyle__title" id="lifestyleTitle">THE LIFESTYLE</h2>
+      <a class="lifestyle__more" href="lifestyle.html">LEARN MORE</a>
+    </header>
+
+    <div class="lifestyle__grid">
+      <article class="lifeCard">
+        <a class="lifeCard__link" href="lifestyle.html#fuel">
+          <div class="lifeCard__media">
+            <img src="images/lifestyle-fuel.jpg" alt="Fueling and nutrition" loading="lazy" />
+          </div>
+          <div class="lifeCard__body">
+            <h3 class="lifeCard__h">Fueling — From Habit to Performance</h3>
+            <p class="lifeCard__p">
+              Simple nutrition + hydration rules I follow for soccer, gym, and runs.
             </p>
           </div>
+        </a>
+      </article>
 
-          <div class="grid-2">
-            <div class="panel">
-              <h3 class="panel__title">Core skills</h3>
-
-              <div class="skill">
-                <div class="skill__row">
-                  <span>Front-end foundations</span
-                  ><span class="muted">Strong</span>
-                </div>
-                <div class="bar"><span style="width: 82%"></span></div>
-              </div>
-
-              <div class="skill">
-                <div class="skill__row">
-                  <span>Java (practice)</span><span class="muted">Growing</span>
-                </div>
-                <div class="bar"><span style="width: 62%"></span></div>
-              </div>
-
-              <div class="skill">
-                <div class="skill__row">
-                  <span>Problem-solving</span><span class="muted">Strong</span>
-                </div>
-                <div class="bar"><span style="width: 86%"></span></div>
-              </div>
-
-              <div class="skill">
-                <div class="skill__row">
-                  <span>Communication</span><span class="muted">Strong</span>
-                </div>
-                <div class="bar"><span style="width: 80%"></span></div>
-              </div>
-            </div>
-
-            <div class="panel panel--accent">
-              <h3 class="panel__title">Training regimen</h3>
-              <p class="muted">Next upgrades (edit these):</p>
-              <ul class="bullets">
-                <li>Ship 1 new project/month (small but clean).</li>
-                <li>Improve Java data structures + testing habits.</li>
-                <li>Build a stronger portfolio + personal brand.</li>
-              </ul>
-
-              <div class="divider"></div>
-
-              <h3 class="panel__title">Achievements</h3>
-              <ul class="mini">
-                <li>Honor Roll (multiple times)</li>
-                <li>Player of the Game / Season</li>
-                <li>All-Region / All-Conference</li>
-              </ul>
-            </div>
+      <article class="lifeCard">
+        <a class="lifeCard__link" href="lifestyle.html#recovery">
+          <div class="lifeCard__media">
+            <img src="images/lifestyle-recovery.jpg" alt="Recovery routine" loading="lazy" />
           </div>
-        </section>
+          <div class="lifeCard__body">
+            <h3 class="lifeCard__h">Recovery Systems</h3>
+            <p class="lifeCard__p">
+              Sleep, mobility, and resets that keep my body ready to perform.
+            </p>
+          </div>
+        </a>
+      </article>
+
+      <article class="lifeCard">
+        <a class="lifeCard__link" href="lifestyle.html#training">
+          <div class="lifeCard__media">
+            <img src="images/lifestyle-training.jpg" alt="Training planning" loading="lazy" />
+          </div>
+          <div class="lifeCard__body">
+            <h3 class="lifeCard__h">Training Mindset</h3>
+            <p class="lifeCard__p">
+              How I plan my weeks, track progress, and stay consistent.
+            </p>
+          </div>
+        </a>
+      </article>
+
+      <article class="lifeCard">
+        <a class="lifeCard__link" href="lifestyle.html#balance">
+          <div class="lifeCard__media">
+            <img src="images/lifestyle-balance.jpg" alt="Discipline and balance" loading="lazy" />
+          </div>
+          <div class="lifeCard__body">
+            <h3 class="lifeCard__h">Discipline & Balance</h3>
+            <p class="lifeCard__p">
+              School + work + sport — staying sharp without burning out.
+            </p>
+          </div>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
 
         <!-- CONTACT -->
         <section id="contact" class="section">
